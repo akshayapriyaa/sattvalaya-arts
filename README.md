@@ -25,3 +25,9 @@ The Sattvalaya Arts website was built to transition the academy from a basic HTM
 First, install the dependencies:
 ```bash
 npm install
+Then, run the development server:
+Bash
+
+npm run dev
+
+Open http://localhost:3000 with your browser to see the result.

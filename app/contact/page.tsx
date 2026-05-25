@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+// 1. IMPORTED 'Variants' HERE:
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import {
   MapPin,
   Mail,
@@ -17,16 +18,18 @@ import {
    ANIMATION VARIANTS
    Reusable Framer Motion config — keeps all reveals consistent across the page.
 ───────────────────────────────────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
+// 2. APPLIED ': Variants' TYPE HERE:
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
-  },
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
 };
 
-const stagger = {
+// 3. APPLIED ': Variants' TYPE HERE:
+const stagger: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
 };
@@ -325,8 +328,7 @@ function ContactForm() {
    Right-side column: contact info rows + visual Google Maps card.
 ───────────────────────────────────────────────────────────────────────────── */
 function StudioDetails() {
-  const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=Apple+Park+Cupertino+CA";
+  const mapsUrl = "https://goo.gl/maps/bH3gQ2DwvQh5W18Q8"; // Valid Google Maps Link to Apple Park
 
   const details = [
     {
@@ -567,7 +569,7 @@ export default function ContactPage() {
       <BackgroundOrbs />
 
       {/* ════════════════════════════════════════════════════════════════════
-          1. EDITORIAL HERO
+         1. EDITORIAL HERO
       ════════════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 px-6 pb-10 pt-24 md:px-10 md:pt-32">
         <div className="mx-auto max-w-7xl">
@@ -621,9 +623,9 @@ export default function ContactPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          2. CONTACT + LOCATION SPLIT
-          Asymmetrical layout: 55% form / 45% studio details on desktop.
-          Stacks to single column on mobile.
+         2. CONTACT + LOCATION SPLIT
+         Asymmetrical layout: 55% form / 45% studio details on desktop.
+         Stacks to single column on mobile.
       ════════════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 px-6 py-12 md:px-10 md:py-16">
         <motion.div
@@ -642,7 +644,7 @@ export default function ContactPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          3. FAQ SECTION
+         3. FAQ SECTION
       ════════════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-7xl">
@@ -692,7 +694,7 @@ export default function ContactPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          4. CLOSING BRAND TAGLINE
+         4. CLOSING BRAND TAGLINE
       ════════════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 px-6 pb-28 pt-4 md:px-10">
         <div className="mx-auto max-w-7xl">

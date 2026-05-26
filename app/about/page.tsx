@@ -45,24 +45,35 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#FCFBFA] flex flex-col text-slate-800 selection:bg-[#B4C4D9]/30">
       
-      {/* 1. CREATIVE QUOTE SECTION */}
+      {/* 1. CREATIVE QUOTE SECTION - FULL BLEED BACKGROUND IMAGE */}
       <section
         ref={quoteRef}
         className={`relative py-32 md:py-48 flex items-center justify-center overflow-hidden transition-all duration-1000 ease-out ${quoteVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <div className="pointer-events-none absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[radial-gradient(circle,rgba(230,235,245,0.6)_0%,transparent_70%)] rounded-full -top-20 -left-20 blur-3xl" aria-hidden="true"></div>
-        <div className="pointer-events-none absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[radial-gradient(circle,rgba(250,240,235,0.6)_0%,transparent_70%)] rounded-full -bottom-20 -right-20 blur-3xl" aria-hidden="true"></div>
+        {/* Background Image & Soft Tint */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/hero-4.jpg" 
+            alt="Sattvalaya ambiance"
+            className="h-full w-full object-cover"
+          />
+          {/* Soft dark overlay for text contrast instead of the white frosted glass */}
+          <div className="absolute inset-0 bg-slate-900/40"></div>
+          {/* Bottom edge gradient to blend seamlessly into the white page below */}
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#FCFBFA] to-transparent"></div>
+        </div>
 
+        {/* Content (Centered ON TOP of the image) */}
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <div className="flex justify-center mb-10">
-            <Music className="text-[#B4C4D9] h-10 w-10 opacity-60" strokeWidth={1.5} aria-hidden="true" />
+            <Music className="text-white/80 h-10 w-10" strokeWidth={1.5} aria-hidden="true" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-slate-900 leading-[1.2] tracking-tight">
-            "Music is the <span className="font-serif italic text-slate-500 font-light">vibration</span> of the soul, and through the Veena, we find our way back to <span className="relative inline-block text-[#B4C4D9]">stillness.</span>"
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-white drop-shadow-md leading-[1.2] tracking-tight">
+            "Music is the <span className="font-serif italic text-slate-200 font-light">vibration</span> of the soul, and through the Veena, we find our way back to <span className="relative inline-block text-[#B4C4D9] drop-shadow">stillness.</span>"
           </h2>
           
-          <p className="mt-12 font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-slate-400 font-bold">
+          <p className="mt-12 font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-slate-200 font-bold drop-shadow-sm">
             — The Philosophy of Sattvalaya —
           </p>
         </div>
@@ -212,22 +223,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. CALL TO ACTION (Minimalist Box) */}
+      {/* 5. CALL TO ACTION (Editorial Image Block) */}
       <section
         ref={ctaRef}
-        className={`px-6 lg:px-12 py-24 md:py-32 text-center transition-all duration-1000 ease-out ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        className={`relative px-6 py-32 md:py-48 flex items-center justify-center overflow-hidden transition-all duration-1000 ease-out ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <div className="mx-auto max-w-4xl bg-[#E8EDF5] p-12 md:p-20 rounded-[3rem] border border-white shadow-sm">
-          <h2 className="text-3xl md:text-5xl font-medium text-slate-900 mb-6 leading-tight tracking-tight">
-            Ready to Experience <br className="hidden md:block" /> 
-            <span className="font-serif italic text-slate-500 font-light">the Harmony?</span>
+        {/* Background Image with Dark Overlay for readability */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/hero-5.jpg" // Replace with your desired final image
+            alt="Students practicing Veena"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-900/60"></div>
+        </div>
+
+        {/* Content Box */}
+        <div className="relative z-10 mx-auto max-w-3xl text-center p-8 md:p-12">
+          <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 leading-tight tracking-tight">
+            Ready to Experience <br /> 
+            <span className="font-serif italic text-slate-200 font-light">the Harmony?</span>
           </h2>
-          <p className="text-lg text-slate-600 mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-200 mb-10 max-w-lg mx-auto leading-relaxed">
             Discover our current schedule, class formats, and find the perfect path for your wellness journey.
           </p>
           <Link
             href="/classes"
-            className="inline-flex h-14 items-center justify-center rounded-full bg-[#B4C4D9] px-10 text-base font-medium text-slate-900 transition-all duration-300 ease-out hover:bg-[#a1b3ca] hover:shadow-lg hover:shadow-[#B4C4D9]/30 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B4C4D9] focus-visible:ring-offset-2 focus-visible:ring-offset-[#E8EDF5]"
+            className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 text-base font-medium text-slate-900 transition-all duration-300 ease-out hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             Explore Our Classes
           </Link>

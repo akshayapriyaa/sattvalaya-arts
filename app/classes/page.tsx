@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -47,7 +48,7 @@ const yogaSessions: ClassSession[] = [
     duration: "60 min",
     members: 160,
     rating: 5,
-    image: "/gallery-1.jpg",
+    image: "/yoga-1.jpg",
     imageAlt: "Practitioner in a calm Hatha Yoga posture in a sun-lit studio",
     overlayGradient: "from-[#EAE6F0]/90 via-[#EAE6F0]/30 to-transparent",
     accent: "bg-[#EAE6F0]",
@@ -62,7 +63,7 @@ const yogaSessions: ClassSession[] = [
     duration: "75 min",
     members: 120,
     rating: 5,
-    image: "/Vinyasa yoga.jpg",
+    image: "/yoga-2.jpg",
     imageAlt: "Practitioner mid-flow in a dynamic Vinyasa sequence outdoors",
     overlayGradient: "from-[#E4EDE6]/90 via-[#E4EDE6]/30 to-transparent",
     accent: "bg-[#E4EDE6]",
@@ -77,7 +78,7 @@ const yogaSessions: ClassSession[] = [
     duration: "90 min",
     members: 100,
     rating: 5,
-    image: "/Yin yoga.jpg",
+    image: "/yoga-3.jpg",
     imageAlt: "Practitioner in a deep Yin Yoga seated floor posture",
     overlayGradient: "from-[#F2E8E4]/90 via-[#F2E8E4]/30 to-transparent",
     accent: "bg-[#F2E8E4]",
@@ -99,7 +100,7 @@ const veenaSessions: ClassSession[] = [
     duration: "60 min",
     members: 80,
     rating: 5,
-    image: "/gallery-2.jpg",
+    image: "/veena-1.jpg",
     imageAlt: "Beginner student holding a Veena and learning foundational posture",
     overlayGradient: "from-[#EDE6DA]/90 via-[#EDE6DA]/30 to-transparent",
     accent: "bg-[#EDE6DA]",
@@ -114,7 +115,7 @@ const veenaSessions: ClassSession[] = [
     duration: "75 min",
     members: 65,
     rating: 5,
-    image: "/gallery-3.jpg",
+    image: "/veena-2.jpg",
     imageAlt: "Intermediate Veena student performing a classical raaga",
     overlayGradient: "from-[#EAE6F0]/90 via-[#EAE6F0]/30 to-transparent",
     accent: "bg-[#EAE6F0]",
@@ -129,7 +130,7 @@ const veenaSessions: ClassSession[] = [
     duration: "90 min",
     members: 40,
     rating: 5,
-    image: "/gallery-6.jpg",
+    image: "/veena-3.png",
     imageAlt: "Advanced Veena performer in an expressive recital setting",
     overlayGradient: "from-[#F2E8E4]/90 via-[#F2E8E4]/30 to-transparent",
     accent: "bg-[#F2E8E4]",
@@ -225,9 +226,9 @@ function MetaRow({ duration, members }: { duration: string; members: number }) {
    ├─────────────────────────────────────────────┤
    │  CARD BODY                                   │
    │  ├─ Rating dots + meta row (duration/members)│
-   │  ├─ Title  (Cormorant Garamond)             │
-   │  ├─ Description  (Jost Light)               │
-   │  └─ CTA button                              │
+   │  ├─ Title  (Cormorant Garamond)              │
+   │  ├─ Description  (Jost Light)                │
+   │  └─ CTA button                               │
    └─────────────────────────────────────────────┘
 ───────────────────────────────────────────────────────────────────────────── */
 function SessionCard({
@@ -256,7 +257,7 @@ function SessionCard({
     >
 
       {/* ══════════════════════════════════════════════════════════════════════
-          IMAGE ZONE
+         IMAGE ZONE
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="relative w-full aspect-[4/3] overflow-hidden flex-shrink-0">
 
@@ -327,7 +328,7 @@ function SessionCard({
 
       </div>
       {/* ══════════════════════════════════════════════════════════════════════
-          CARD BODY
+         CARD BODY
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="flex flex-col flex-1 p-[22px]">
 
@@ -350,9 +351,10 @@ function SessionCard({
           {description}
         </p>
 
-        {/* CTA button */}
+        {/* CTA button (Redirects to /contact) */}
         <div className="flex items-center justify-between">
-          <button
+          <Link
+            href="/contact"
             className={`inline-flex items-center gap-2
                         text-[11px] font-medium tracking-[0.2em] uppercase
                         px-5 py-2.5 rounded-full
@@ -364,21 +366,7 @@ function SessionCard({
             <span className="transition-transform duration-300 group-hover:translate-x-1 inline-block">
               →
             </span>
-          </button>
-
-          {/* Subtle bookmark / save icon */}
-          <button
-            aria-label={`Save ${title}`}
-            className="w-8 h-8 rounded-full flex items-center justify-center
-                       border border-[rgba(180,160,148,0.25)]
-                       text-[#9B8EA6] hover:text-[#D4A5A0] hover:border-[#D4A5A0]
-                       transition-colors duration-200"
-          >
-            <svg width="13" height="14" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-              <path d="M2 1h9a1 1 0 0 1 1 1v10.5l-5-2.5L2 12.5V2a1 1 0 0 1 1-1z"
-                    stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
-            </svg>
-          </button>
+          </Link>
         </div>
 
       </div>
@@ -466,7 +454,7 @@ export default function ClassesSection() {
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           className="mb-4 text-[48px] font-light leading-[1.13] tracking-[-0.01em] text-[#2E2218]"
         >
-          Our <em className="not-italic text-[#D4A5A0]">Classes</em> &amp; Sessions
+          Our <em className="not-italic text-[#D4A5A0]">Classes </em> &amp; Sessions
         </h2>
         <p className="mx-auto max-w-[500px] text-[15px] font-light leading-[1.8] tracking-[0.02em] text-[#6B5B4E]">
           Where ancient practice meets serene modern learning — each session a quiet ritual,
@@ -494,9 +482,10 @@ export default function ClassesSection() {
         </div>
       </div>
 
-      {/* ── Footer CTA ── */}
+      {/* ── Footer CTA (Redirects to /contact) ── */}
       <div className="relative z-10 mt-4 flex justify-center">
-        <button
+        <Link
+          href="/contact"
           className="inline-flex items-center gap-2.5 rounded-full
                      border border-[rgba(155,142,166,0.35)]
                      bg-[rgba(234,230,240,0.4)] px-8 py-3.5
@@ -505,7 +494,7 @@ export default function ClassesSection() {
                      hover:bg-[#9B8EA6] hover:text-white hover:border-[#9B8EA6]"
         >
           View Full Schedule &nbsp;→
-        </button>
+        </Link>
       </div>
 
     </section>

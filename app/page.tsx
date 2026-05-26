@@ -11,7 +11,7 @@ export default function Home() {
         {/* Background Image & Gradients */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-sattvalaya.jpg"
+            src="/hero-1.jpg"
             alt="The Union of Sound and Stillness"
             className="h-full w-full object-cover object-[80%_center] md:object-right"
           />
@@ -47,39 +47,113 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- 2. SECONDARY SECTION (Uncover The Soulful Essence) --- */}
-      <section className="relative mx-auto max-w-4xl px-6 py-24 text-center md:px-12">
-        {/* Decorative Lotus Icon */}
-        <div className="mx-auto mb-8 flex justify-center">
-          <svg className="h-16 w-16 text-[#B4C4D9] opacity-80" viewBox="0 0 24 24" fill="currentColor">
-             <path d="M12 2C12 2 15 6 15 11C15 16 12 22 12 22C12 22 9 16 9 11C9 6 12 2 12 2Z" />
-             <path d="M22 12C22 12 18 15 13 15C8 15 2 12 2 12C2 12 8 9 13 9C18 9 22 12 22 12Z" />
-             <path d="M19.071 4.929C19.071 4.929 16.243 8.464 12.707 11.293C9.172 14.121 4.929 19.071 4.929 19.071C4.929 19.071 8.464 16.243 11.293 12.707C14.121 9.172 19.071 4.929 19.071 4.929Z" />
-             <path d="M19.071 19.071C19.071 19.071 16.243 15.536 12.707 12.707C9.172 9.879 4.929 4.929 4.929 4.929C4.929 4.929 8.464 7.757 11.293 11.293C14.121 14.828 19.071 19.071 19.071 19.071Z" />
-          </svg>
+      {/* --- 2. THE SATTVALAYA APPROACH (3 Pillars) --- */}
+      <section className="relative mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-24">
+        <div className="mb-16 text-center">
+          <div className="mb-6 flex items-center justify-center gap-4 text-xs font-bold tracking-[0.2em] uppercase text-slate-400">
+            <span className="h-px w-12 bg-[#B4C4D9]" /> Our Philosophy <span className="h-px w-12 bg-[#B4C4D9]" />
+          </div>
+          <h2 className="text-4xl font-medium leading-tight text-slate-900 md:text-5xl">
+            The Sattvalaya <span className="font-serif italic text-slate-500 font-light">Approach</span>
+          </h2>
         </div>
 
-        <h2 className="text-4xl font-medium leading-tight text-slate-900 md:text-5xl">
-          Uncover The Soulful <br />
-          <span className="font-serif italic text-slate-500 font-light">Essence of Tradition</span> with Sattvalaya
-        </h2>
-        
-        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-600">
-          A sanctuary where mind, body, and spirit converge in harmony. Our passion for classical arts comes from our commitment to fostering a supportive community for empowerment and growth.
-        </p>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Pillar 1: Veena */}
+          <div className="group flex flex-col items-start rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#B4C4D9]/15">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E8EDF5] text-2xl transition-transform duration-500 group-hover:scale-110">
+              🎵
+            </div>
+            <h3 className="mb-4 text-xl font-semibold text-slate-900">A Foundation in Classical Veena</h3>
+            <p className="text-[15px] leading-relaxed text-slate-500">
+              Learn classical veena through a strong foundation in technique, rhythm, and bhava. Training is guided with respect to tradition while making learning accessible and joyful for all levels.
+            </p>
+          </div>
 
-        <div className="mt-10">
-          <Link
-            href="/about"
-            className="inline-block border-b-2 border-slate-900 pb-1 text-sm font-bold text-slate-900 transition-colors hover:border-[#B4C4D9] hover:text-[#B4C4D9]"
-          >
-            More About Us
-          </Link>
+          {/* Pillar 2: Yoga */}
+          <div className="group flex flex-col items-start rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#B4C4D9]/15">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F5F2E8] text-2xl transition-transform duration-500 group-hover:scale-110">
+              🧘‍♀️
+            </div>
+            <h3 className="mb-4 text-xl font-semibold text-slate-900">Holistic Mind-Body Practice</h3>
+            <p className="text-[15px] leading-relaxed text-slate-500">
+              Through breath, movement, and mindful awareness, our yoga sessions build strength, flexibility, and inner stillness. The practice fosters balance and clarity, supporting overall well-being in daily life.
+            </p>
+          </div>
+
+          {/* Pillar 3: Flexible Learning */}
+          <div className="group flex flex-col items-start rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#B4C4D9]/15">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F5E8E8] text-2xl transition-transform duration-500 group-hover:scale-110">
+              🌍
+            </div>
+            <h3 className="mb-4 text-xl font-semibold text-slate-900">Flexible Learning for Modern Lifestyles</h3>
+            <p className="text-[15px] leading-relaxed text-slate-500">
+              In-person classes in the Bay Area, along with online and hybrid options, make it easy to stay consistent—whether you are a beginner, a returning learner, or learning alongside family.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* --- 3. CLASS HIGHLIGHTS (Carousel/Grid) --- */}
-      <section className="relative mx-auto max-w-7xl px-6 pb-32 md:px-12">
+      {/* --- 3. MEET THE DIRECTOR / ABOUT US --- */}
+      <section className="relative mx-auto max-w-7xl px-6 py-20 md:px-12 md:pb-32">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center lg:gap-24">
+          
+          {/* Image Side - Photo of Director or Logo */}
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[3rem] bg-[#E8EDF5] shadow-xl shadow-[#B4C4D9]/15">
+              <img
+                src="/director.png" 
+                alt="Rajalakshmi Roshan - Artistic Director"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent mix-blend-multiply"></div>
+            </div>
+            
+            {/* Decorative background accent behind the image */}
+            <div className="absolute -bottom-8 -left-8 -z-10 h-64 w-64 rounded-full bg-[#B4C4D9]/20 blur-3xl"></div>
+          </div>
+
+          {/* Text Side */}
+          <div className="flex flex-col items-start text-left">
+            {/* <div className="mb-6 flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase text-slate-400">
+              <span className="h-px w-10 bg-[#B4C4D9]" /> About Us
+            </div> */}
+            
+            <h2 className="mb-8 text-4xl font-medium leading-tight text-slate-900 md:text-5xl">
+              About  
+              <span className="font-serif italic text-slate-500 font-light"> us</span>
+            </h2>
+            
+            <div className="flex flex-col gap-6 text-[15px] leading-[1.85] text-slate-600">
+              <p>
+                Founded in 2022 by Rajalakshmi Roshan, Sattvalaya Arts began as an initiative to nurture and educate aspiring students in the Veena. Rooted in tradition, the teaching approach guides students through both discipline and discovery.
+              </p>
+              <p>
+                Classes focus on music theory, technique, and the nuanced art of playing the Veena, while fostering creativity and a deep love for the instrument. Each lesson is thoughtfully structured to balance technical precision with expressive growth.
+              </p>
+              <p>
+                In addition to Veena training, Sattvalaya Arts offers yoga and meditation classes that support overall well-being, helping students cultivate balance in body, mind, and spirit.
+              </p>
+              <p>
+                To ensure meaningful learning, class sizes are kept small so every student receives individual attention and personalized guidance throughout their journey. Classes are offered in San Jose, California, as well as through online and hybrid formats, welcoming students from around the world.
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <Link
+                href="/about"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-slate-300 bg-transparent px-8 text-[12px] font-bold uppercase tracking-[0.15em] text-slate-800 transition-all hover:border-[#B4C4D9] hover:bg-[#B4C4D9] hover:text-white"
+              >
+                Meet the Teacher
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* --- 4. CLASS HIGHLIGHTS (Carousel/Grid) --- */}
+      <section className="relative mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-12">
         
         {/* Section Header with Arrows */}
         <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -87,15 +161,6 @@ export default function Home() {
             Our Variety of <br />
             <span className="font-serif italic text-slate-500 font-light">Offerings</span> for You
           </h2>
-          
-          {/* <div className="flex gap-4">
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-[#B4C4D9] hover:text-[#B4C4D9]">
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 text-slate-900 transition-colors hover:border-[#B4C4D9] hover:bg-[#B4C4D9] hover:text-white">
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div> */}
         </div>
 
         {/* The 3-Column Grid */}
@@ -109,7 +174,7 @@ export default function Home() {
                 <span className="text-xs font-bold text-slate-700">All Levels</span>
               </div>
               <img 
-                src="/gallery-8.jpg" 
+                src="/yoga-6.jpg" 
                 alt="Yoga Practice" 
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
               />
@@ -149,7 +214,7 @@ export default function Home() {
                 <span className="text-xs font-bold text-slate-700">Advanced</span>
               </div>
               <img 
-                src="/gallery-1.jpg" 
+                src="/yoga-5.jpg" 
                 alt="Advanced Veena" 
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
               />
